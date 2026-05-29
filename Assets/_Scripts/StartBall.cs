@@ -38,15 +38,21 @@ public class StartBall : MonoBehaviour
 
         timingSlider.value = sliderCurrentValue;
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && canBowl)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            StartBowling();
+        }
+    }
+
+    public void StartBowling()
+    {
+        if (canBowl)
         {
             canBowl = false;
             cricketBowlingController.SetMultiplier(CalculateMultiplier(sliderCurrentValue));
             cricketBowlingController.Bowl();
             StartCoroutine(NextBall());
         }
-
-        
     }
 
     private void SwitchSliderDirection()
@@ -84,4 +90,5 @@ public class StartBall : MonoBehaviour
 
         return multiplier;
     }
+
 }

@@ -167,4 +167,19 @@ public class CricketBowlingController : MonoBehaviour
     {
         movementMultiplier = multilierValue;
     }
+
+    public void SetBowlingTypeSpin()
+    {
+        bowlingType = BowlingType.Spin;
+    }
+
+    public void SetBowlingTypeSwing()
+    {
+        bowlingType = BowlingType.Swing;
+    }
+
+    public void SetMaxBallMovement(float maxBallMovement)
+    {
+        movementAmount = maxBallMovement;
+    }
 }
